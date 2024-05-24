@@ -12,7 +12,7 @@
     "url": "git+https://github.com/mdtanjilhasan/datetimejs.git"
   },
   "keywords": [
-    "datetimejs"
+    "datetimejs", "datetime", "datetimezone", "timezone"
   ],
   "author": "Md. Tanjil Hasan",
   "license": "MIT",
