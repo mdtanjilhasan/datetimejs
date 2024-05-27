@@ -1,6 +1,3 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
-import fs from 'fs';
 import dayjs from "dayjs";
 import utc from 'dayjs/plugin/utc.js';
 import timezone from 'dayjs/plugin/timezone.js';
@@ -10,21 +7,22 @@ import isLeapYear from 'dayjs/plugin/isLeapYear.js';
 import isBetween from 'dayjs/plugin/isBetween.js';
 import relativeTime from 'dayjs/plugin/relativeTime.js';
 
-// Get the current file path
-const __filename = fileURLToPath(import.meta.url);
-// Get the directory name of the current file
-const __dirname = path.dirname(__filename);
-const dotenvPath = path.join(__dirname, 'node_modules', 'dotenv');
-if (fs.existsSync(dotenvPath)) {
-    loadDotEnvModule();
-}
-async function loadDotEnvModule() {
-    if (typeof require !== 'undefined') {
-        return require('dotenv').config();
-    } else {
-        return await import('dotenv/config.js');
+async function loadDotenv() {
+    try {
+        if (typeof require !== 'undefined') {
+            // CommonJS
+            require('dotenv').config();
+        } else {
+            // ES Modules
+            const dotenv = await import('dotenv');
+            dotenv.config();
+        }
+    } catch (exception) {
+
     }
 }
+
+await loadDotenv();
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -318,6 +316,7 @@ class DateTime {
 
     // date timezone start
     currentTimezone() {
+        this.value = process.env?.APP_DATETIMEZONE ? process.env.APP_DATETIMEZONE : dayjs.tz.guess();
         return this;
     }
 
@@ -329,7 +328,7 @@ class DateTime {
         if (timezone) {
             this.timezone = timezone;
         } else {
-            this.timezone = import.meta.env?.VITE_APP_TIMEZONE ? import.meta.env.VITE_APP_TIMEZONE : dayjs.tz.guess();
+            this.timezone = process.env?.APP_DATETIMEZONE ? process.env.APP_DATETIMEZONE : dayjs.tz.guess();
         }
     }
 
