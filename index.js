@@ -1,11 +1,11 @@
 import dayjs from "dayjs";
-import utc from 'dayjs/plugin/utc';
-import timezone from 'dayjs/plugin/timezone';
-import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
-import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
-import isLeapYear from 'dayjs/plugin/isLeapYear';
-import isBetween from 'dayjs/plugin/isBetween';
-import relativeTime from 'dayjs/plugin/relativeTime';
+import utc from 'dayjs/plugin/utc.js';
+import timezone from 'dayjs/plugin/timezone.js';
+import isSameOrBefore from 'dayjs/plugin/isSameOrBefore.js';
+import isSameOrAfter from 'dayjs/plugin/isSameOrAfter.js';
+import isLeapYear from 'dayjs/plugin/isLeapYear.js';
+import isBetween from 'dayjs/plugin/isBetween.js';
+import relativeTime from 'dayjs/plugin/relativeTime.js';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
