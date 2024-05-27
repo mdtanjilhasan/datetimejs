@@ -1,3 +1,6 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+import fs from 'fs';
 import dayjs from "dayjs";
 import utc from 'dayjs/plugin/utc.js';
 import timezone from 'dayjs/plugin/timezone.js';
@@ -6,6 +9,22 @@ import isSameOrAfter from 'dayjs/plugin/isSameOrAfter.js';
 import isLeapYear from 'dayjs/plugin/isLeapYear.js';
 import isBetween from 'dayjs/plugin/isBetween.js';
 import relativeTime from 'dayjs/plugin/relativeTime.js';
+
+// Get the current file path
+const __filename = fileURLToPath(import.meta.url);
+// Get the directory name of the current file
+const __dirname = path.dirname(__filename);
+const dotenvPath = path.join(__dirname, 'node_modules', 'dotenv');
+if (fs.existsSync(dotenvPath)) {
+    loadDotEnvModule();
+}
+async function loadDotEnvModule() {
+    if (typeof require !== 'undefined') {
+        return require('dotenv').config();
+    } else {
+        return await import('dotenv/config.js');
+    }
+}
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
