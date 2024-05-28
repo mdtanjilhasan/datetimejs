@@ -97,7 +97,7 @@ class DateTime {
                 let val = array[0];
                 const timeFound = this.#getMatchedTime(val);
 
-                if (timeFound.length) {
+                if (!timeFound.length) {
                     throw 'Invalid Time String.';
                 }
                 if (!this.#isValidTime(val)) {

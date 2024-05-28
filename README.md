@@ -14,13 +14,13 @@ import DateTime from "tanjil-datetime";
 #### Initialization
 ```bash
 DateTime.init().now().format().value;
-//2024-05-27 13:09:59
+// 2024-05-27 13:09:59
 ```
 Or
 ```bash
 const datetime = new DateTime();
 datetime.now().format().value;
-//2024-05-27 13:09:59
+// 2024-05-27 13:09:59
 ```
 #### List of all available formats
 
@@ -162,6 +162,144 @@ DateTime.init().now().format('YYYY-MM-DD hh:mm:ss A').value
             <td><code>a</code></td>
             <td>am pm</td>
             <td></td>
+        </tr>
+    </tbody>
+</table>
+
+# Parsing
+
+```bash
+DateTime.init().parse(new Date()).format().value
+// 2024-05-27 13:10:11
+```
+Or
+```bash
+DateTime.init().parse(DateTime.init().now().value).format().value
+// 2024-05-27 13:10:20
+```
+Or
+```bash
+DateTime.init().parse('2022').format().value
+// 2022-01-01 00:00:00
+```
+Or
+```bash
+DateTime.init().parse('2022-05').format().value
+// 2022-05-01 00:00:00
+```
+Or
+```bash
+DateTime.init().parse('2022-05-08').format().value
+// 2022-05-08 00:00:00
+```
+Or
+```bash
+DateTime.init().parse('10:55:10').format().value
+// 2024-05-27 10:55:10
+```
+Or
+```bash
+DateTime.init().parse('20:55:10').format('YYYY-MM-DD hh:mm:ss A').value
+// 2024-05-27 08:55:10 PM
+```
+Or
+```bash
+DateTime.init().parse('2023-05-04 20:55:10').format('YYYY-MM-DD hh:mm:ss A').value
+// 2023-05-04 08:55:10 PM
+```
+
+# Addition
+
+Add One Day
+```bash
+DateTime.init().now().addDay().format().value
+// 2024-05-28 13:19:59
+```
+Add More than one Day
+```bash
+DateTime.init().now().addDays(2).format().value
+// 2024-05-29 13:20:50
+```
+#### List of all methods
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Params</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>addDay</code></td>
+            <td>--</td>
+            <td>Add One Day to a date</td>
+        </tr>
+        <tr>
+            <td><code>addDays</code></td>
+            <td>count as integer: example <code>addDays(5)</code></td>
+            <td>Add custom day count to a date</td>
+        </tr>
+        <tr>
+            <td><code>addWeek</code></td>
+            <td>--</td>
+            <td>Add One Week to a date</td>
+        </tr>
+        <tr>
+            <td><code>addWeeks</code></td>
+            <td>count as integer: example <code>addWeeks(5)</code></td>
+            <td>Add custom week count to a date</td>
+        </tr>
+        <tr>
+            <td><code>addMonth</code></td>
+            <td>--</td>
+            <td>Add One month to a date</td>
+        </tr>
+        <tr>
+            <td><code>addMonths</code></td>
+            <td>count as integer: example <code>addMonths(5)</code></td>
+            <td>Add custom month count to a date</td>
+        </tr>
+        <tr>
+            <td><code>addYear</code></td>
+            <td>--</td>
+            <td>Add One year to a date</td>
+        </tr>
+        <tr>
+            <td><code>addYears</code></td>
+            <td>count as integer: example <code>addYears(5)</code></td>
+            <td>Add custom year count to a date</td>
+        </tr>
+        <tr>
+            <td><code>addHour</code></td>
+            <td>--</td>
+            <td>Add One hour to a time</td>
+        </tr>
+        <tr>
+            <td><code>addHours</code></td>
+            <td>count as integer: example <code>addHours(5)</code></td>
+            <td>Add custom hour count to a time</td>
+        </tr>
+        <tr>
+            <td><code>addMinute</code></td>
+            <td>--</td>
+            <td>Add One minute to a time</td>
+        </tr>
+        <tr>
+            <td><code>addMinutes</code></td>
+            <td>count as integer: example <code>addMinutes(5)</code></td>
+            <td>Add custom minute count to a time</td>
+        </tr>
+        <tr>
+            <td><code>addSecond</code></td>
+            <td>--</td>
+            <td>Add One second to a time</td>
+        </tr>
+        <tr>
+            <td><code>addSeconds</code></td>
+            <td>count as integer: example <code>addSeconds(5)</code></td>
+            <td>Add custom second count to a time</td>
         </tr>
     </tbody>
 </table>
