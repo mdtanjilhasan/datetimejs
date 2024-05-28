@@ -599,7 +599,7 @@ if you with to use ```.env``` file for timezone; for central timezone for your a
 
 1. Install ```dotenv``` package. using ```npm i dotenv```
 2. Create ```.env``` file to the root of your project
-3. use like this ```APP_DATETIMEZONE='America/Los_Angeles'```
+3. set timezone ```APP_DATETIMEZONE='America/Los_Angeles'```
 
 After following this steps you can use like the example bellow:
 
@@ -625,4 +625,15 @@ if you are not using ```.env``` file
 ```bash
 DateTime.init().currentTimezone().value
 // Asia/Dhaka my current timezone
+```
+
+# Convert date time to a specific timezone
+```bash
+DateTime.init('America/Los_Angeles').parse('2024-05-10 10:00:50', true).format('YYYY-MM-DD hh:ss:mm A').value
+// 2024-05-09 09:50:00 PM
+```
+if you are using ```.env``` file
+```bash
+DateTime.init().parse('2024-05-10 10:00:50', true).format('YYYY-MM-DD hh:ss:mm A').value
+// 2024-05-09 09:50:00 PM
 ```
