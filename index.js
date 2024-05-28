@@ -316,7 +316,7 @@ class DateTime {
 
     // date timezone start
     currentTimezone() {
-        this.value = process.env?.APP_DATETIMEZONE ? process.env.APP_DATETIMEZONE : dayjs.tz.guess();
+        this.value = process?.env?.APP_DATETIMEZONE ? process.env.APP_DATETIMEZONE : dayjs.tz.guess();
         return this;
     }
 
@@ -328,7 +328,7 @@ class DateTime {
         if (timezone) {
             this.timezone = timezone;
         } else {
-            this.timezone = process.env?.APP_DATETIMEZONE ? process.env.APP_DATETIMEZONE : dayjs.tz.guess();
+            this.timezone = process?.env?.APP_DATETIMEZONE ? process.env.APP_DATETIMEZONE : dayjs.tz.guess();
         }
     }
 

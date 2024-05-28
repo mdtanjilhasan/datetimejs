@@ -303,3 +303,99 @@ DateTime.init().now().addDays(2).format().value
         </tr>
     </tbody>
 </table>
+
+# Subtract
+
+Subtract One Day
+```bash
+DateTime.init().now().subDay().format().value
+// 2024-05-26 13:19:59
+```
+Subtract More than one Day
+```bash
+DateTime.init().now().subDays(2).format().value
+// 2024-05-25 13:20:50
+```
+#### List of all methods
+
+<table>
+    <thead>
+    <tr>
+        <th>Method</th>
+        <th>Params</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>subDay</code></td>
+        <td>--</td>
+        <td>Subtract One Day to a date</td>
+    </tr>
+    <tr>
+        <td><code>subDays</code></td>
+        <td>count as integer: example <code>subDays(5)</code></td>
+        <td>Subtract custom day count to a date</td>
+    </tr>
+    <tr>
+        <td><code>subWeek</code></td>
+        <td>--</td>
+        <td>Subtract One Week to a date</td>
+    </tr>
+    <tr>
+        <td><code>subWeeks</code></td>
+        <td>count as integer: example <code>subWeeks(5)</code></td>
+        <td>Subtract custom week count to a date</td>
+    </tr>
+    <tr>
+        <td><code>subMonth</code></td>
+        <td>--</td>
+        <td>Subtract One month to a date</td>
+    </tr>
+    <tr>
+        <td><code>subMonths</code></td>
+        <td>count as integer: example <code>subMonths(5)</code></td>
+        <td>Subtract custom month count to a date</td>
+    </tr>
+    <tr>
+        <td><code>subYear</code></td>
+        <td>--</td>
+        <td>Subtract One year to a date</td>
+    </tr>
+    <tr>
+        <td><code>subYears</code></td>
+        <td>count as integer: example <code>subYears(5)</code></td>
+        <td>Subtract custom year count to a date</td>
+    </tr>
+    <tr>
+        <td><code>subHour</code></td>
+        <td>--</td>
+        <td>Subtract One hour to a time</td>
+    </tr>
+    <tr>
+        <td><code>subHours</code></td>
+        <td>count as integer: example <code>subHours(5)</code></td>
+        <td>Subtract custom hour count to a time</td>
+    </tr>
+    <tr>
+        <td><code>subMinute</code></td>
+        <td>--</td>
+        <td>Subtract One minute to a time</td>
+    </tr>
+    <tr>
+        <td><code>subMinutes</code></td>
+        <td>count as integer: example <code>subMinutes(5)</code></td>
+        <td>Subtract custom minute count to a time</td>
+    </tr>
+    <tr>
+        <td><code>subSecond</code></td>
+        <td>--</td>
+        <td>Subtract One second to a time</td>
+    </tr>
+    <tr>
+        <td><code>subSeconds</code></td>
+        <td>count as integer: example <code>subSeconds(5)</code></td>
+        <td>Subtract custom second count to a time</td>
+    </tr>
+    </tbody>
+</table>
