@@ -580,3 +580,49 @@ OR
 # Timezone
 
 #### List of all available [timezones](docs/TIMEZONE.md).
+Set your own Timezone
+
+```bash
+DateTime.init('America/Los_Angeles').now().format().value;
+// 2024-05-28 06:12:26
+```
+Or
+```bash
+const datetime = new DateTime('America/Los_Angeles');
+datetime.now().format().value;
+// 2024-05-28 06:12:26
+```
+
+if you are not using any timezone. then it will take system timezone by default.
+
+if you with to use ```.env``` file for timezone; for central timezone for your app
+
+1. Install ```dotenv``` package. using ```npm i dotenv```
+2. Create ```.env``` file to the root of your project
+3. use like this ```APP_DATETIMEZONE='America/Los_Angeles'```
+
+After following this steps you can use like the example bellow:
+
+```bash
+DateTime.init().now().format().value;
+// 2024-05-28 06:12:26 this is the time for America/Los_Angeles
+```
+Or
+```bash
+const datetime = new DateTime();
+datetime.now().format().value;
+// 2024-05-28 06:12:26 this is the time for America/Los_Angeles
+```
+
+
+# Current Timezone
+```bash
+DateTime.init('America/Los_Angeles').currentTimezone().value
+// America/Los_Angeles
+```
+
+if you are not using ```.env``` file
+```bash
+DateTime.init().currentTimezone().value
+// Asia/Dhaka my current timezone
+```
