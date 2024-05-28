@@ -399,3 +399,180 @@ DateTime.init().now().subDays(2).format().value
     </tr>
     </tbody>
 </table>
+
+# Difference
+Difference in day between two days
+```bash
+DateTime.init().now().diffInDays(DateTime.init().now().subDay().value).value
+// 1
+```
+OR
+```bash
+DateTime.init().parse('2024-05-01').diffInDays(DateTime.init().parse('2024-05-05').value).value
+// 4
+```
+#### List of all methods
+
+<table>
+    <thead>
+    <tr>
+        <th>Method</th>
+        <th>Params</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>diffInDays</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return day count</td>
+    </tr>
+    <tr>
+        <td><code>diffInWeeks</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return week count</td>
+    </tr>
+    <tr>
+        <td><code>diffInMonths</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return month count</td>
+    </tr>
+    <tr>
+        <td><code>diffInYears</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return year count</td>
+    </tr>
+    <tr>
+        <td><code>diffInHours</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return hour count</td>
+    </tr>
+    <tr>
+        <td><code>diffInMinutes</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return minute count</td>
+    </tr>
+    <tr>
+        <td><code>diffInSeconds</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return second count</td>
+    </tr>
+    </tbody>
+</table>
+
+# Comparison
+Comparing two dates
+```bash
+DateTime.init().parse('2024-05-01').lessThan(DateTime.init().parse('2024-05-05').value).value
+// true
+```
+OR
+```bash
+DateTime.init().now().lessThan(DateTime.init().parse('2024-05-05').value).value
+// false
+```
+
+#### List of all methods
+<table>
+    <thead>
+    <tr>
+        <th>Method</th>
+        <th>Params</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>lessThan</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return Boolean</td>
+    </tr>
+    <tr>
+        <td><code>lessThanOrEqual</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return Boolean</td>
+    </tr>
+    <tr>
+        <td><code>greaterThan</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return Boolean</td>
+    </tr>
+    <tr>
+        <td><code>greaterThanOrEqual</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return Boolean</td>
+    </tr>
+    <tr>
+        <td><code>equalTo</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return Boolean</td>
+    </tr>
+    <tr>
+        <td><code>inBetween</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return Boolean</td>
+    </tr>
+    <tr>
+        <td><code>isSameMonth</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return Boolean</td>
+    </tr>
+    <tr>
+        <td><code>isSameDay</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return Boolean</td>
+    </tr>
+    <tr>
+        <td><code>isSameYear</code></td>
+        <td>Valid date time string or Date Object</td>
+        <td>return Boolean</td>
+    </tr>
+    </tbody>
+</table>
+
+# Leap Year
+```bash
+DateTime.init().now().checkLeapYear().value
+// true
+```
+
+# Days in month
+```bash
+DateTime.init().now().dayCountInMonth().value
+// as now is May so output is: 31
+```
+
+# Start of month
+```bash
+DateTime.init().now().startOfMonth().format('YYYY-MM-DD').value
+// 2024-05-01
+```
+
+# End of month
+```bash
+DateTime.init().now().endOfMonth().format('YYYY-MM-DD').value
+// 2024-05-31
+```
+
+# Diff for human
+```bash
+DateTime.init().now().diffForHumans().value
+// a few seconds ago
+```
+Or
+```bash
+DateTime.init().now().diffForHumans(DateTime.init().now().subHour().value).value
+// in an hour
+```
+
+# Month Number
+* be careful with the month name spelling
+ ```bash
+ DateTime.init().monthNumber('January').value
+ // 01
+ ```
+OR
+ ```bash
+ DateTime.init().monthNumber('jan').value
+ // 01
+ ```
