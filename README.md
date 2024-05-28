@@ -576,3 +576,7 @@ OR
  DateTime.init().monthNumber('jan').value
  // 01
  ```
+
+# Timezone
+
+#### List of all available [timezones](docs/TIMEZONE.md).
